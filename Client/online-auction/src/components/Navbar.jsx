@@ -15,7 +15,7 @@ const Navbar = ({name}) => {
       },600);
     };
   return (
-    <div className='w-screen h-[70px] bg-[#f8f8f8] border border-black flex'>
+    <div className='w-screen h-[70px] bg-[#f8f8f8] border flex'>
             <div className='flex justify-start items-center space-x-4'>
             <div className={scroll?(`h-8 flex justify-start items-center p-1 animate-spin`):(`h-8 flex justify-start items-center p-1`)} onClick={handleNavbar}>
                 {change?<Menu size={40}/>:<ArrowLeft size={40}/>}
