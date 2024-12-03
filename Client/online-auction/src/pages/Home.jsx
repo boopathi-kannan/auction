@@ -14,6 +14,7 @@ const Home = () => {
       <img src='https://res.cloudinary.com/dve8r06ul/image/upload/v1733240064/auctionhome1_tcipqj.avif' className='h-full'/>
     </div>
     </div>
+    </>
   )
 }
 
