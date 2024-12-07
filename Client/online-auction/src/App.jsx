@@ -6,19 +6,26 @@ import About from './components/About'
 import Footer from './components/Footer'
 import Login from './components/Login'
 import Signin from './components/Signin'
+import {BrowserRouter,Routes,Route} from 'react-router-dom';
 function App() {
 
   return (
     <>
-       <Navbar/>
+       {/* <Navbar/>
        <Home/>
        <Contact/>
        <Howits/>
        <About/>
        <Login/>
        <Signin/>
-       <Footer/>
-
+       <Footer/> */}
+       <BrowserRouter>
+       <Routes>
+        <Route path="/" element={<Home/>}/> 
+        <Route path="/login" element={<Login/>}/> 
+        <Route path="/register" element={<Signin/>}/> 
+       </Routes>
+       </BrowserRouter>
     </>
   )
 }
