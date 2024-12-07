@@ -19,7 +19,7 @@ export const Footer=()=> {
                         info@online-auction.org
                     </div>
 
-            <div className="flex flex-row justify-center pl-10 text-center p-5 gap-2">
+            <div className="flex flex-col justify-around text-center">
                 <img 
                     src="https://res.cloudinary.com/dve8r06ul/image/upload/v1728239274/linkedin_iav3iw.png" 
                     alt="Atom" 

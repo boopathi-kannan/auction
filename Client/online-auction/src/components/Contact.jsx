@@ -7,13 +7,13 @@ const Contact=()=>{
 
                 <div className="flex flex-col md:flex-row w-full justify-between mt-10 gap-20">
                     <div className="leading-9 w-full md:w-2/6 mb-4 md:mb-0">
-                        <span className="font-semibold text-xl">
-                            Contact our Foundation
+                        <span className="font-semibold text-xl p-10">
+                            Content our Foundation.
                         </span>
                         <br />
-                        If you find our activities interesting, please help us to fulfill the goals of the One More Tree Foundation. Let's plant trees together, educate, and promote corporate social responsibility against climate change.
+                        <p className="pl-10">Welcome to our Online Auction Support Center! Whether you’re a seasoned bidder or a first-time seller, we’re dedicated to providing you with the assistance you need to make your auction experience seamless and enjoyable.</p>
                         <div className="mt-10 m-10">
-                            <img className="h-[60vh] w-[60vw]" src="https://res.cloudinary.com/dve8r06ul/image/upload/v1733547461/download_1_nvrmea.jpg" alt="Contact" />
+                            <img className="h-[35vh] w-[80vw]" src="https://res.cloudinary.com/dve8r06ul/image/upload/v1733589668/auction-hammer_inb6am.jpg" alt="Contact" />
                         </div>
                     </div>
                     <div>
@@ -81,7 +81,7 @@ const Contact=()=>{
                     </div>
                 </div>
 
-                <form className="ml-auo space-y-4">
+                <form className="ml-auo space-y-4 w-96">
                     <input type='text' placeholder='Name'
                         className="w-full text-gray-800 rounded-md py-2.5 px-4 border text-sm outline-blue-500" />
                     <input type='email' placeholder='Email'

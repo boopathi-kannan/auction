@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@media(max-width:575px)
+{
+  .footer_sytle
+  {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}
