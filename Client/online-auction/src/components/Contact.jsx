@@ -18,8 +18,8 @@ const Contact=()=>{
                     </div>
                     <div>
                     <div className="mt-6 w-4/6">
-            <div className="grid sm:grid-cols-2 items-start gap-14 p-8 mx-auto max-w-4xl bg-white shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] rounded-md font-[sans-serif]">
-                <div>
+            <div className="grid sm:grid-cols-2 items-start gap-14 p-8 mx-auto max-w-4xl bg-white shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] rounded-md font-[sans-serif] min-w-96">
+                <div  className="w-50">
                     <h1 className="text-gray-800 text-3xl font-extrabold">Let's Talk</h1>
                     <p className="text-sm text-gray-500 mt-4">Have some big idea or brand to develop and need help? Then reach out we'd love to hear about your project  and provide help.</p>
 
@@ -81,7 +81,7 @@ const Contact=()=>{
                     </div>
                 </div>
 
-                <form className="ml-auo space-y-4 w-96">
+                <form className="ml-auo space-y-4 w-80">
                     <input type='text' placeholder='Name'
                         className="w-full text-gray-800 rounded-md py-2.5 px-4 border text-sm outline-blue-500" />
                     <input type='email' placeholder='Email'
