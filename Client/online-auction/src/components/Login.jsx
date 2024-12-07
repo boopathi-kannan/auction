@@ -1,8 +1,10 @@
 
-
+import {ChevronRight} from 'lucide-react'
 export const Login=()=> {
   return (
     <>
+    <div className="w-screen flex justify-center items-center">
+    <div className="w-[500px] h-auto border border-black rounded-md p-5">
     <h1 className="text-center font-bold text-2xl">Login</h1>
     <form className="max-w-sm mx-auto ">
   <div className="mb-5">
@@ -15,9 +17,11 @@ export const Login=()=> {
   </div>
  
   <div className="flex flex-row justify-center">
-  <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login</button>
+  <button type="submit" className=" bg-yellow-400 pl-5 pr-5 pt-3 pb-3 rounded-lg cursor-pointer hover:bg-yellow-500 hover:text-white"><div className='flex gap-2 font-bold w-full justify-center items-center'>Login <span><ChevronRight color='black' size={'25'}/></span></div></button>
   </div>
 </form>
+</div>
+</div>
     </>
   )
 }
