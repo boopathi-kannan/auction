@@ -1,4 +1,4 @@
-import React from 'react'
+
 import FinishedCard from '../components/FinishedCard'
 import UpcomingCard from '../components/UpcomingCard'
 import Navbar from '../components/Navbar'
@@ -8,6 +8,8 @@ import About from '../components/About'
 import Footer from '../components/Footer'
 import {ChevronRight} from 'lucide-react'
 import {Link} from 'react-router-dom'
+import Auctionpage from '../components/Auctionpage'
+
 const Home = () => {
   return (
     <>
@@ -45,6 +47,8 @@ const Home = () => {
  <Howits/>
  <Contact/>
  <Footer/>
+ <Auctionpage/>
+
     </>
   )
 }

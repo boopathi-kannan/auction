@@ -7,6 +7,8 @@ import Footer from './components/Footer'
 import Login from './components/Login'
 import Signin from './components/Signin'
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
+
+
 function App() {
 
   return (
@@ -26,6 +28,7 @@ function App() {
         <Route path="/register" element={<Signin/>}/> 
        </Routes>
        </BrowserRouter>
+      
     </>
   )
 }
