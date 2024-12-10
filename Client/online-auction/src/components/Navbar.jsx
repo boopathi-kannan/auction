@@ -3,7 +3,7 @@ import { Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Logo from '../assets/online-auction logo.webp';
 
-const Navbar = ({ name }) => {
+export const Navbar = ({ name }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
@@ -26,7 +26,7 @@ const Navbar = ({ name }) => {
           <Link to='/' className='hover:underline'>
             Home
           </Link>
-          <Link to='/about' className='hover:underline'>
+          <Link to='/aboutus' className='hover:underline'>
             About Us
           </Link>
           <Link to='/login' className='hover:underline'>
@@ -53,7 +53,7 @@ const Navbar = ({ name }) => {
               Home
             </Link>
             <Link
-              to='/about'
+              to='/aboutus'
               className='text-lg font-medium hover:bg-gray-200 p-2 rounded'
               onClick={toggleSidebar}
             >

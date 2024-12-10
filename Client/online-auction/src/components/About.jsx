@@ -1,14 +1,15 @@
 import { MonitorCog, ThumbsUp } from 'lucide-react';
-
+import {Navbar} from './Navbar'
+import {Howits} from './Howits'
+import Footer from './Footer';
 export const About = () => {
   return (
     <>
-      <div className="w-screen h-auto bg-gray-100">
+      <Navbar/>
+      <div className="w-screen h-auto bg-gray-100 pt-14">
         <h1 className="font-bold text-black text-3xl text-center p-5">
           About <span className="font-thin text-gray-500">Us</span>
         </h1>
-
-        {/* Quality Products Section */}
         <div className="flex flex-col lg:flex-row items-center justify-center p-5 gap-10 lg:gap-20">
           <div className="flex items-center gap-5 lg:gap-10">
             <div className="p-5 rounded-full w-[100px] h-[100px] bg-amber-500 flex justify-center items-center">
@@ -24,8 +25,6 @@ export const About = () => {
             Online Auction features a wide variety of quality products at wholesale prices with our main locations in Coimbatore, CA, and Phoenix, AZ. We strive to make sure our customers are completely satisfied with their purchase.
           </p>
         </div>
-
-        {/* Auction Experience Section */}
         <div className="flex flex-col lg:flex-row-reverse items-center justify-center p-5 gap-10 lg:gap-20">
           <div className="flex items-center gap-5 lg:gap-10">
             <div className="p-5 rounded-full w-[100px] h-[100px] bg-amber-500 flex justify-center items-center">
@@ -42,6 +41,8 @@ export const About = () => {
           </p>
         </div>
       </div>
+      <Howits/>
+      <Footer/>
     </>
   );
 };
