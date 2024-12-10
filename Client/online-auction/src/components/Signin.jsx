@@ -4,12 +4,14 @@ import Navbar from '../components/Navbar'
 import About from '../components/About'
 import Footer from '../components/Footer'
 import { Loader } from 'lucide-react'
+import {Navigate} from "react-router-dom"
 import axios from 'axios'
 import {Link} from 'react-router-dom'
 import { useRef, useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 export const Signin=()=> {
+  const [RedirecttoLogin,setRedirecttoLogin]=useState(false);
   const [loading,setLoading]=useState(false);
   const emailref=useRef(null);
   const nameref=useRef(null);
@@ -37,6 +39,7 @@ export const Signin=()=> {
       {
         const notify = () => toast(res.data.message);
         notify();
+        setTimeout(()=>setRedirecttoLogin(true),1000);
       }
       else{
         const notify = () => toast.error(res.data.message);
@@ -44,10 +47,14 @@ export const Signin=()=> {
       }
     }
     catch(err){
-      const notify = () => toast.error("Error!");
+      const notify = () => toast.error(err.message);
       notify();
     }
   }
+  if(RedirecttoLogin)
+    {
+      return <Navigate to={"/login"}/>
+    }
   return (
     <>
     <ToastContainer/>
@@ -73,7 +80,7 @@ export const Signin=()=> {
   </div>
   <div className='w-full justify-end flex font-bold'> <Link to='/login'>Already a user?</Link></div>
   <div className="flex flex-row justify-center">
-  <button onClick={handleRegister} type="submit" className=" bg-yellow-400 pl-5 pr-5 pt-3 pb-3 rounded-lg cursor-pointer hover:bg-yellow-500 hover:text-white"><div className='flex gap-2 font-bold w-full justify-center items-center'>Login {loading?(<span className='animate-spin'><Loader color='black' size={'20'}/></span>):(<span><ChevronRight color='black' size={'25'}/></span>)}</div></button>
+  <button onClick={handleRegister} type="submit" className=" bg-yellow-400 pl-5 pr-5 pt-3 pb-3 rounded-lg cursor-pointer hover:bg-yellow-500 hover:text-white"><div className='flex gap-2 font-bold w-full justify-center items-center'>Register {loading?(<span className='animate-spin'><Loader color='black' size={'20'}/></span>):(<span><ChevronRight color='black' size={'25'}/></span>)}</div></button>
   </div>
 
 </div>

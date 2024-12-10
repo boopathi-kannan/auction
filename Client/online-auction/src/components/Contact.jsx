@@ -2,7 +2,7 @@
 const Contact=()=>{
   return (
     <>
-        <div className="h-full w-full flex flex-col items-center font-serif mx-7">
+        <div className="h-full w-full flex flex-col items-center font-serif ">
                 <div className=" text-3xl mb-4 p-8 font-bold">CONTACT</div>
 
                 <div className="flex flex-col md:flex-row w-full justify-between mt-10 gap-20">
@@ -12,7 +12,7 @@ const Contact=()=>{
                         </span>
                         <br />
                         <p className="pl-10">Welcome to our Online Auction Support Center! Whether you’re a seasoned bidder or a first-time seller, we’re dedicated to providing you with the assistance you need to make your auction experience seamless and enjoyable.</p>
-                        <div className="mt-10 m-10">
+                        <div className="mt-10">
                             <img className="h-[35vh] w-[80vw]" src="https://res.cloudinary.com/dve8r06ul/image/upload/v1733589668/auction-hammer_inb6am.jpg" alt="Contact" />
                         </div>
                     </div>
@@ -81,7 +81,7 @@ const Contact=()=>{
                     </div>
                 </div>
 
-                <form className="ml-auo space-y-4 ">
+                <form className=" space-y-4 ">
                     <input type='text' placeholder='Name'
                         className="w-full text-gray-800 rounded-md py-2.5 px-4 border text-sm outline-blue-500" />
                     <input type='email' placeholder='Email'

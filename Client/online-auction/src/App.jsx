@@ -9,7 +9,8 @@ import Signin from './components/Signin'
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import Profile from './pages/Profile'
 import Admin from './pages/Admin';
-
+import Profileu from './components/Profileu'
+import Userfrom from './components/Userfrom';
 
 function App() {
 
@@ -25,7 +26,9 @@ function App() {
        <Footer/> */}
        <BrowserRouter>
        <Routes>
-        <Route path="/" element={<Admin/>}/> 
+        <Route path="/" element={<Home/>}/> 
+        <Route path="/userdetails" element={<Userfrom/>}/> 
+        <Route path="/admin" element={<Admin/>}/> 
         <Route path="/login" element={<Login/>}/> 
         <Route path="/register" element={<Signin/>}/> 
        </Routes>

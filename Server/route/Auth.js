@@ -1,46 +1,50 @@
-const router=require('express').Router();
-const UserSchema=require('../model/User');
+const router = require("express").Router();
+const User = require("../model/user");
+const bcrypt = require("bcryptjs");
 
-router.post('/Register',async(req,res)=>{
-    try
-    {
-    console.log(req.body);
-    const {Email,Name,Password}=req.body;
-    const Schema=new UserSchema({Email,Name,Password});
-    await Schema.save();
-    res.status(201).send({message:"User registered successfully!"});
+router.post("/Register", async (req, res) => {
+    try {
+        const { Email, Name, Password } = req.body;
+
+        const existingUser = await User.findOne({ Email });
+        if (existingUser) {
+            return res.status(400).json({ message: "User already exists!" });
+        }
+
+        const hashPassword = bcrypt.hashSync(Password, 8);
+        const user = new User({ Email, Name, Password: hashPassword });
+
+        await user.save();
+        res.status(201).json({ message: "User registered successfully", user });
+    } catch (err) {
+        console.error("Registration error:", err.message);
+        res.status(500).json({ message: "Server error!" });
     }
-    catch(err)
+});
+
+router.post("/Login",async(req,res)=>{
+    try{
+    const {Email,Password}=req.body;
+    const existingUser=await User.findOne({Email});
+    if(!existingUser)
     {
-        res.status(500).send({error:"Internal Server Error"});
-        console.log(err);
+        return res.status(400).json({message:"Please register first!"});
+    }
+    const isMatch = bcrypt.compareSync(Password, existingUser.Password);
+    if(!isMatch)
+    {
+        return res.status(400).json({message:"Invalid password"});
+    }
+    const { Password: _, ...userWithoutPassword } = existingUser.toObject();
+        return res.status(200).json({
+            message: "Logged in successfully",
+            user: userWithoutPassword
+        });
+}
+     catch(err)
+    {
+       return res.status(404).json({message:"Error"});
     }
 })
 
-
-router.post('/Login',async(req,res)=>{
-    try
-    {
-        const {Email,Password}=req.body;
-        const UserData=await UserSchema.findOne({Email});
-        if(!UserData)
-            {
-                res.status(400).send({message:"Please register first!"});
-                return;
-            }
-        if(UserData.Password==Password)
-        {
-            res.status(200).send({message:"User Logged in successfully!",data:UserData});
-        }
-        else{
-            res.status(210).send({message:"Incorrect Password!"});
-        }
-    }
-    catch(err)
-    {
-        res.send({message:"Internal server error!",data:err});
-    }
-})
-
-
-module.exports=router;
+module.exports = router;
