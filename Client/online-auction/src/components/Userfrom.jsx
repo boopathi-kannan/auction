@@ -6,18 +6,14 @@ export const Userform = () => {
   const emailRef = useRef(null);
   const phoneRef = useRef(null);
   const genderRef = useRef(null);
-  const imageRef = useRef(null);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = {
-      name: nameRef.current.value,
-      email: emailRef.current.value,
-      phone: phoneRef.current.value,
-      gender: genderRef.current.value,
-      image: imageRef.current.files[0] 
+      Name: nameRef.current.value,
+      Email: emailRef.current.value,
+      Phone: phoneRef.current.value,
+      Gender: genderRef.current.value,
     };
-
     try {
       const response = await axios.post('http://localhost:19999/api/v2/user', formData, {
         headers: {
@@ -57,7 +53,7 @@ export const Userform = () => {
             </div>
             <div className="mb-5">
               <label className="block mb-2 text-sm font-medium text-gray-900">Profile Image</label>
-              <input ref={imageRef} type="file" accept="image/*" className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none" />
+              <input type="file" accept="image/*" className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none" />
             </div>
             <button type="submit" className="text-white bg-black hover:bg-black font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center">Submit</button>
           </form>

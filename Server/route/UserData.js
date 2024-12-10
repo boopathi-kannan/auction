@@ -1,34 +1,25 @@
-const express = require('express');
-const router = express.Router();
-const User = require('../models/User');
-const multer = require('multer');
+const router = require("express").Router();
+const UserData=require('../model/UserData');
 
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, 'uploads/'); 
-  },
-  filename: function (req, file, cb) {
-    cb(null, Date.now() + '-' + file.originalname);
-  },
+router.post('/addData',async(req,res)=>{
+     try {
+        const {Name,Email,Phone,Gender}=req.body;
+        const x=new UserData({Name,Email,Phone,Gender});
+        await x.save();
+        res.status(200).send({message:"Data saved successfully!"});
+     } catch (error) {
+        res.status(500).send({message:"Data not saved!"});
+     } 
 });
 
-const upload = multer({ storage: storage });
-
-router.post('/user', upload.single('image'), async (req, res) => {
-  try {
-    const { name, email, phone, gender } = req.body;
-    const newUser = new User({
-      name,
-      email,
-      phone,
-      gender,
-      image: req.file ? req.file.path : null,
-    });
-    await newUser.save();
-    res.status(201).json({ message: 'User data saved successfully!' });
-  } catch (error) {
-    res.status(500).json({ message: 'Internal Server Error', error });
-  }
+router.get('/getData',async(req,res)=>{
+    try {
+       const {Email}=req.body;
+       const Data= await UserData.findOne({Email});
+       res.status(200).send({message:"Intha vaichuko!",data:Data});
+    } catch (error) {
+       res.status(500).send({message:null,data:null});
+    } 
 });
 
-module.exports = router;
+module.exports=router;

@@ -12,9 +12,7 @@ export const Navbar = ({ name }) => {
 
   return (
     <>
-      {/* Main Navbar */}
       <div className='fixed w-screen h-[70px] bg-[#f8f8f8] border flex items-center justify-between z-50'>
-        {/* Logo and Sidebar Toggle */}
         <div className='flex items-center space-x-4'>
           <div className='lg:hidden' onClick={toggleSidebar}>
             {isSidebarOpen ? <X size={30} /> : <Menu size={30} />}

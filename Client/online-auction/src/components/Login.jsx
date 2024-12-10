@@ -21,10 +21,7 @@ export const Login = () => {
     setLoading(true);
     const Email = emailRef.current.value;
     const Password = passwordRef.current.value;
-    const data1 = {
-      Email,
-      Password,
-    };
+    const data1 = { Email, Password };
 
     try {
       const res = await axios.post('http://localhost:19999/api/v1/Login', data1);
@@ -49,12 +46,7 @@ export const Login = () => {
   };
 
   if (RedirectToHome) {
-    console.log('Redirecting, GetData:', GetData());
-    if (GetData()) {
-      return <Navigate to="/" />;
-    } else {
-      return <Navigate to="/userdetails" />;
-    }
+      return <Navigate to="/profile" />;
   }
 
   return (

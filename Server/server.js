@@ -1,35 +1,25 @@
-
+const bodyParser = require('body-parser');
 const express = require('express');
 const cors = require('cors');
-require('dotenv').config(); 
+
 require('./connection/conn'); 
 
 const app = express();
-
-app.use(cors({
-    origin: process.env.CORS_ORIGIN || 'http://localhost:5173', 
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    credentials: true,
-}));
 app.use(express.json());
+app.use(cors());
 
-
-app.options('*', cors());
-const auth = require('./route/Auth');
-const user=require('./route/UserData');
+app.use(bodyParser.json());
+const auth = require('./route/Auth.js');
+const UserData=require('./route/UserData.js');
 app.use('/api/v1', auth);
-app.use('/api/v2',user);
-
+app.use('/api/v2',UserData);
 app.get('/', (req, res) => {
     res.send('Hello!');
 });
 
-app.use((err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).json({ error: 'Something went wrong!' });
-});
 
-const PORT = process.env.PORT || 19999;
+
+const PORT =19999;
 app.listen(PORT, () => {
     console.log(`Server is running on port: ${PORT}`);
 });

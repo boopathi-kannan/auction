@@ -1,6 +1,24 @@
-
+import { useEffect } from 'react';
+import {Navbar} from './Navbar'
+import axios from 'axios';
+import { StoreData, GetData } from '../Store/store';
 const Profileu = () => {
-  return <div>
+  const getData=async()=>{
+       try {
+         const res=await axios.get('http://localhost:19999/api/v2/getData',JSON.stringify(GetData().Email));
+         let a=GetData();
+         let b=res.data.data;
+         StoreData({ ...a, ...b });
+         console.log("Stored new data is :"+GetData());
+         console.log(res);
+       } catch (error) {
+          console.log("Error"+error);
+       }
+  };
+  useEffect(()=>getData(),[]);
+  return (
+    <>
+  <div>
     <div className="bg-amber-400 pt-20">
 <div className="flex flex-row justify-center bg-amber-400">
   <img src="https://res.cloudinary.com/dve8r06ul/image/upload/v1733824717/imagge_pfxzhs.avif" className="h-40"/>
@@ -16,13 +34,13 @@ const Profileu = () => {
 <div className="flex flex-row justify-center"> 
   <button className="bg-black text-white p-3 rounded-xl text-center m-10 w-20">Auction</button>
   <button  className="bg-black text-white p-3 rounded-xl text-center m-10 w-20">Bid</button>
-
 </div>
 <div>
-
 </div>
 </div>
-  </div>;
+  </div>
+  </>
+  )
 };
 
 export default Profileu; 

@@ -16,14 +16,6 @@ function App() {
 
   return (
     <>
-       {/* <Navbar/>
-       <Home/>
-       <Contact/>
-       <Howits/>
-       <About/>
-       <Login/>
-       <Signin/>
-       <Footer/> */}
        <BrowserRouter>
        <Routes>
         <Route path="/" element={<Home/>}/> 
@@ -32,9 +24,9 @@ function App() {
         <Route path="/login" element={<Login/>}/> 
         <Route path="/register" element={<Signin/>}/>
         <Route path='/aboutus' element={<About/>}/> 
+        <Route path='/profile' element={<Profileu/>}/>
        </Routes>
        </BrowserRouter>
-      
     </>
   )
 }
