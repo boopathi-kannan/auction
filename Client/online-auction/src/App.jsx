@@ -7,6 +7,8 @@ import Footer from './components/Footer'
 import Login from './components/Login'
 import Signin from './components/Signin'
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
+import Profile from './pages/Profile'
+import Admin from './pages/Admin';
 
 
 function App() {
@@ -23,7 +25,7 @@ function App() {
        <Footer/> */}
        <BrowserRouter>
        <Routes>
-        <Route path="/" element={<Home/>}/> 
+        <Route path="/" element={<Admin/>}/> 
         <Route path="/login" element={<Login/>}/> 
         <Route path="/register" element={<Signin/>}/> 
        </Routes>
