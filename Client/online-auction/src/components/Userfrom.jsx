@@ -1,7 +1,9 @@
 import React, { useRef } from 'react';
 import axios from 'axios';
-
+import { useNavigate } from 'react-router-dom';
+import { StoreData, GetData } from '../Store/store';
 export const Userform = () => {
+  const navigate = useNavigate();
   const nameRef = useRef(null);
   const emailRef = useRef(null);
   const phoneRef = useRef(null);
@@ -15,11 +17,13 @@ export const Userform = () => {
       Gender: genderRef.current.value,
     };
     try {
-      const response = await axios.post('http://localhost:19999/api/v2/user', formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-      });
+      const response = await axios.post('http://localhost:19999/api/v2/addData', formData, {
+    });
+    console.log(response.status);
+    if (response.status==200) {
+      navigate('/profile'); 
+      return;
+    }
       console.log('Form submitted successfully:', response.data);
     } catch (error) {
       console.error('Error submitting form:', error);

@@ -8,7 +8,6 @@ const userSchema = new mongoose.Schema({
   Email: {
     type: String,
     required: true,
-    unique: true,
   },
   Phone: {
     type: String,
@@ -16,7 +15,6 @@ const userSchema = new mongoose.Schema({
   },
   Gender: {
     type: String,
-    enum: ['Male', 'Female'],
     required: true,
   },
 });

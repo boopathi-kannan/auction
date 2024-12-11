@@ -11,8 +11,10 @@ app.use(cors());
 app.use(bodyParser.json());
 const auth = require('./route/Auth.js');
 const UserData=require('./route/UserData.js');
+const Product=require('./route/productRoute.js');
 app.use('/api/v1', auth);
 app.use('/api/v2',UserData);
+app.use('/api/v3',Product);
 app.get('/', (req, res) => {
     res.send('Hello!');
 });

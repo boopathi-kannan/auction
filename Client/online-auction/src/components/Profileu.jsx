@@ -1,21 +1,29 @@
 import { useEffect } from 'react';
 import {Navbar} from './Navbar'
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import { StoreData, GetData } from '../Store/store';
 const Profileu = () => {
-  const getData=async()=>{
-       try {
-         const res=await axios.get('http://localhost:19999/api/v2/getData',JSON.stringify(GetData().Email));
-         let a=GetData();
-         let b=res.data.data;
-         StoreData({ ...a, ...b });
-         console.log("Stored new data is :"+GetData());
-         console.log(res);
-       } catch (error) {
-          console.log("Error"+error);
+  const navigate = useNavigate();
+  useEffect(()=>{
+    const getData=async()=>{
+      try {
+        const res=await axios.get('http://localhost:19999/api/v2/getData',JSON.stringify(GetData().Email));
+        let a=GetData();
+        let b=res.data.data;
+        console.error(b);
+        if (!b) {
+          return navigate('/userdetails'); 
        }
-  };
-  useEffect(()=>getData(),[]);
+        StoreData({ ...a, ...b });
+        console.log("Stored new data is :"+GetData());
+        console.log(res);
+      } catch (error) {
+         console.log("Error"+error);
+      }
+ };
+ getData();
+  },[]);
   return (
     <>
   <div>
