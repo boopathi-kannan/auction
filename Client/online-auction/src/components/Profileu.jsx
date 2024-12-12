@@ -18,7 +18,7 @@ const Profileu = () => {
           return navigate('/userdetails');
         }
 
-        const res = await axios.get('http://localhost:19999/api/v2/getData', {
+        const res = await axios.get('https://auction-1-853o.onrender.com/api/v2/getData', {
           params: { Email: email },
         });
 

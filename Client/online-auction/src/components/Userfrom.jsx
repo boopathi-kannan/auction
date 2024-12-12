@@ -17,7 +17,7 @@ export const Userform = () => {
       Gender: genderRef.current.value,
     };
     try {
-      const response = await axios.post('http://localhost:19999/api/v2/addData', formData, {
+      const response = await axios.post('https://auction-1-853o.onrender.com/api/v2/addData', formData, {
     });
     console.log(response.status);
     if (response.status==200) {

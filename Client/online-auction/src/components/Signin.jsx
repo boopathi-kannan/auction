@@ -34,7 +34,7 @@ export const Signin=()=> {
         Password:Password,
       }
       try{
-      const res=await axios.post('http://localhost:19999/api/v1/Register',data1);
+      const res=await axios.post('https://auction-1-853o.onrender.com/api/v1/Register',data1);
       if(res.status==201)
       {
         const notify = () => toast(res.data.message);

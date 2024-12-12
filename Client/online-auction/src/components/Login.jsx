@@ -26,7 +26,7 @@ export const Login = () => {
     const data1 = { Email, Password };
 
     try {
-      const res = await axios.post('http://localhost:19999/api/v1/Login', data1);
+      const res = await axios.post('https://auction-1-853o.onrender.com/api/v1/Login', data1);
       if (res.status === 200) {
         const notify = () => toast(res.data.message);
         notify();

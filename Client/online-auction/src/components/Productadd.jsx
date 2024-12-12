@@ -21,7 +21,7 @@ const Productadd = () => {
     };
 
     try {
-      const response = await axios.post('http://localhost:19999/api/v3/products', productData);
+      const response = await axios.post('https://auction-1-853o.onrender.com/api/v3/products', productData);
       console.log(response.data);
       alert('Product added successfully!');
     } catch (error) {

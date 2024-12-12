@@ -3,7 +3,7 @@ const Contact=()=>{
     const handleSend=async()=>{
 
        try {
-            const res=await axios.post('http://localhost:19999/api/v4/sendForm',{
+            const res=await axios.post('https://auction-1-853o.onrender.com/api/v4/sendForm',{
                 Email:emailref.current.value,
             })
        } catch (error) {
