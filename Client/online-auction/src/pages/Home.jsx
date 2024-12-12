@@ -46,11 +46,8 @@ const Home = () => {
   ))}
  </div>
  <Howits/>
- <Footer/>
  <Contact/>
- <Auctionpage/>
- <Adminlog/>
-
+ <Footer/>
     </>
   )
 }

@@ -13,7 +13,7 @@ import Profileu from './components/Profileu'
 import Userfrom from './components/Userfrom';
 import {Adminlog} from './components/Adminlog'
 import {Productadd} from './components/Productadd'
-
+import { Messages } from './pages/Messages'
 function App() {
 
   return (
@@ -29,7 +29,7 @@ function App() {
         <Route path='/profile' element={<Profileu/>}/>
         <Route path='/adminlog' element={<Adminlog/>}/>
         <Route path='/addproducts' element={<Productadd/>}/>
-        {/* <Route path='/currentauction' element={<Adminlog/>}/> */}
+        <Route path='/messages' element={<Messages/>}/>
        </Routes>
        </BrowserRouter>
     </>

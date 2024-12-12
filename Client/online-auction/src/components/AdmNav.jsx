@@ -41,14 +41,14 @@ export const AdmNav = () => {
             } md:translate-x-0`}
           >
             <li className="py-2 px-4 text-center hover:bg-blue-700 md:hover:bg-transparent">
-              <a href="/" className="block font-bold text-xl">
+            <Link to="/" className="block font-bold text-xl">
                 Home
-              </a>
+                </Link>
             </li>
             <li className="py-2 px-4 text-center hover:bg-blue-700 md:hover:bg-transparent">
-              <a href="#" className="block font-bold text-xl">
+                <Link to="/messages" className="block font-bold text-xl">
                 Message
-              </a>
+                </Link>
             </li>
             <li className="py-2 px-4 text-center hover:bg-blue-700 md:hover:bg-transparent">
               <Link to='/addproducts'><a href="" className="block font-bold text-xl">
