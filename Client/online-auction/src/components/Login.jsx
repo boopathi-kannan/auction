@@ -5,6 +5,7 @@ import About from '../components/About';
 import Footer from '../components/Footer';
 import { Link, Navigate } from 'react-router-dom';
 import { Loader } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useRef, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
@@ -12,6 +13,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { StoreData, GetData } from '../Store/store';
 
 export const Login = () => {
+  const navigate = useNavigate();
   const [RedirectToHome, setRedirectToHome] = useState(false);
   const [loading, setLoading] = useState(false);
   const emailRef = useRef(null);
@@ -32,6 +34,16 @@ export const Login = () => {
         console.log(res.data);
         sessionStorage.setItem('id', res.data.user);
         console.log(sessionStorage.getItem('id'));
+        const res1 = await axios.get('http://localhost:19999/api/v2/getData', {
+          params: { Email: Email },
+        });
+
+        const userData = res1.data?.data;
+
+        if (userData) {
+          console.error("Existing user!");
+          return navigate('/');
+        }
         setTimeout(() => setRedirectToHome(true), 2000);
       } else {
         const notify = () => toast.error(res.data.message);

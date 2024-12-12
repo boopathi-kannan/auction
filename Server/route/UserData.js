@@ -13,14 +13,25 @@ router.post('/addData', async (req, res) => {
     }
   });
 
-router.get('/getData',async(req,res)=>{
+  router.get("/getData", async (req, res) => {
     try {
-       const {Email}=req.body;
-       const Data= await UserData.findOne({Email});
-       res.status(200).send({message:"Intha vaichuko!",data:Data});
+      const { Email } = req.query;
+  
+      if (!Email) {
+        return res.status(400).send({ message: "Email is required!" });
+      }
+  
+      const userData = await UserData.findOne({ Email });
+  
+      if (!userData) {
+        return res.status(404).send({ message: "No data found for the given email." });
+      }
+  
+      res.status(200).send({ message: "Data retrieved successfully!", data: userData });
     } catch (error) {
-       res.status(500).send({message:null,data:null});
-    } 
-});
+      console.error("Error in /getData:", error.message);
+      res.status(500).send({ message: "Failed to retrieve data." });
+    }
+  });
 
 module.exports=router;
