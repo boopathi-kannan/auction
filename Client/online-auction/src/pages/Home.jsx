@@ -10,7 +10,7 @@ import {ChevronRight} from 'lucide-react'
 import {Link} from 'react-router-dom'
 import Auctionpage from '../components/Auctionpage'
 import Adminlog from '../components/Adminlog'
-
+import { GetLogin,SetLogin } from '../Store/store';
 const Home = () => {
   return (
     <>
@@ -19,7 +19,7 @@ const Home = () => {
       <div className='p-3 text-center w-1/2 self-center'>
         <h1 className='text-5xl m-5'>The best place</h1>
         <h1 className='font-semibold text-5xl m-5'>to buy and sell!</h1>
-        <Link to='/register'><div className='w-full flex justify-center'> <button className='bg-black text-white pl-5 pr-5 pt-3 pb-3 rounded-md font-bold m-5 flex gap-2'>Register<span className='text-orange-400 font-bold'><ChevronRight /></span> </button></div></Link>
+        { !GetLogin()&&(<Link to='/register'><div className='w-full flex justify-center'> <button className='bg-black text-white pl-5 pr-5 pt-3 pb-3 rounded-md font-bold m-5 flex gap-2'>Register<span className='text-orange-400 font-bold'><ChevronRight /></span> </button></div></Link>)}
       </div>
     <div className='w-full flex justify-center items-center h-full'>
       <img src='https://res.cloudinary.com/dve8r06ul/image/upload/v1733240064/auctionhome1_tcipqj.avif' className='h-full'/>
@@ -27,22 +27,22 @@ const Home = () => {
     </div>
     <div className='w-full flex justify-start mt-10 mb-10 pl-10'>
       <p className='font-light text-4xl text-gray-400'>
-        <span className='font-bold text-black'>Finished </span> Auctions
+        <span className='font-bold text-black'>Current </span> Auctions
       </p>
     </div>
   <div className='flex overflow-x-auto'>
-  {[...Array(10)].map((_, index) => (
-    <FinishedCard key={index} />
+    {[...Array(10)].map((_, index) => (
+    <UpcomingCard key={index} />
   ))}
  </div>
  <div className='w-full flex justify-start mt-10 mb-10 pl-10'>
       <p className='font-light text-4xl text-gray-400'>
-        <span className='font-bold text-black'>Current </span> Auctions
+        <span className='font-bold text-black'>Finished </span> Auctions
       </p>
     </div>
  <div className='flex overflow-x-auto'>
-  {[...Array(10)].map((_, index) => (
-    <UpcomingCard key={index} />
+ {[...Array(10)].map((_, index) => (
+    <FinishedCard key={index} />
   ))}
  </div>
  <Howits/>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Logo from "../assets/online-auction logo.webp";
 import {Link} from 'react-router-dom'
-const AdmNav = () => {
+export const AdmNav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -51,9 +51,10 @@ const AdmNav = () => {
               </a>
             </li>
             <li className="py-2 px-4 text-center hover:bg-blue-700 md:hover:bg-transparent">
-              <a href="#" className="block font-bold text-xl">
+              <Link to='/addproducts'><a href="" className="block font-bold text-xl">
                 Add Products
               </a>
+              </Link>
             </li>
             <li className="py-2 px-4 text-center hover:bg-blue-700 md:hover:bg-transparent">
               <a href="#" className="block font-bold text-xl">

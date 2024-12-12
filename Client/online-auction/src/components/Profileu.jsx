@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { StoreData, GetData } from '../Store/store';
+import { StoreData, GetData, SetLogin } from '../Store/store';
 import {Navbar} from './Navbar'
 import {Footer} from './Footer'
 const Profileu = () => {

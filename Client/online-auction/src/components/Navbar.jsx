@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Logo from '../assets/online-auction logo.webp';
-
+import { User2 } from 'lucide-react';
+import { GetLogin,SetLogin } from '../Store/store';
 export const Navbar = ({ name }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -33,13 +34,21 @@ export const Navbar = ({ name }) => {
           <Link to='/register' className='hover:underline'>
             Register
           </Link>
-          <Link to='/admin' className='hover:underline'>
+          <Link to='/adminlog' className='hover:underline'>
             Admin Login
           </Link>
         </div>
+        {
+        GetLogin()?(
+          <Link to='/profile'>
+        <div className='w-auto h-auto rounded-full border border-black p-2 bg-yellow-400'>
+           <User2/>
+        </div> 
+        </Link>
+        ):(null)
+        }
       </div>
 
-      {/* Sidebar for Small Screens */}
       {isSidebarOpen && (
         <div className='fixed top-[70px] left-0 w-[70%] h-full bg-[#f8f8f8] shadow-lg z-40 lg:hidden'>
           <div className='flex flex-col p-4 gap-6'>
@@ -72,7 +81,7 @@ export const Navbar = ({ name }) => {
               Register
             </Link>
             <Link
-              to='/admin'
+              to='/adminlog'
               className='text-lg font-medium hover:bg-gray-200 p-2 rounded'
               onClick={toggleSidebar}
             >

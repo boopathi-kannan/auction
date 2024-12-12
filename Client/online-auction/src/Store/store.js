@@ -11,4 +11,17 @@ function GetData()
 }
 
 
-export {StoreData,GetData};
+let loggedIn=false;
+
+function SetLogin(val)
+{
+    loggedIn=val;
+}
+
+function GetLogin()
+{
+    return loggedIn;
+}
+
+
+export {StoreData,GetData,SetLogin,GetLogin};

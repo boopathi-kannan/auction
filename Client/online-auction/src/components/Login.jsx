@@ -10,7 +10,7 @@ import axios from 'axios';
 import { useRef, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { StoreData, GetData } from '../Store/store';
+import { StoreData, GetData,SetLogin} from '../Store/store';
 
 export const Login = () => {
   const navigate = useNavigate();
@@ -42,6 +42,7 @@ export const Login = () => {
 
         if (userData) {
           console.error("Existing user!");
+          SetLogin(true);
           return navigate('/');
         }
         setTimeout(() => setRedirectToHome(true), 2000);

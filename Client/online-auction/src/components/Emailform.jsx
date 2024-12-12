@@ -62,7 +62,7 @@ export const Emailform =()=> {
               className="bg-yellow-400 pl-5 pr-5 pt-3 pb-3 rounded-lg cursor-pointer hover:bg-yellow-500 hover:text-white"
             >
               <div className="flex gap-2 font-bold w-full justify-center items-center">
-                Login
+                 Send Mail!
               </div>
             </button>
           </div>
