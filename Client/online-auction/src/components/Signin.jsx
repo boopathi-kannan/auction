@@ -41,7 +41,13 @@ export const Signin=()=> {
         notify();
         setTimeout(()=>setRedirecttoLogin(true),1000);
       }
-      else{
+      else if(res.status==400)
+      {
+        const notify = () => toast.error("user already exists");
+        notify();
+      }
+      else
+      {
         const notify = () => toast.error(res.data.message);
         notify();
       }

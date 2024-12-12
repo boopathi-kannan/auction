@@ -27,7 +27,7 @@ router.post('/addData', async (req, res) => {
         return res.status(404).send({ message: "No data found for the given email." });
       }
   
-      res.status(200).send({ message: "Data retrieved successfully!", data: userData });
+      res.status(200).send({ message: "Data received successfully!", data: userData });
     } catch (error) {
       console.error("Error in /getData:", error.message);
       res.status(500).send({ message: "Failed to retrieve data." });

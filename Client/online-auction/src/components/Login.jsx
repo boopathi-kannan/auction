@@ -23,7 +23,7 @@ export const Login = () => {
     setLoading(true);
     const Email = emailRef.current.value;
     const Password = passwordRef.current.value;
-    const data1 = { Email, Password };
+    const data1 = { Email:Email, Password:Password };
 
     try {
       const res = await axios.post('https://auction-1-853o.onrender.com/api/v1/Login', data1);
@@ -34,20 +34,24 @@ export const Login = () => {
         console.log(res.data);
         sessionStorage.setItem('id', res.data.user);
         console.log(sessionStorage.getItem('id'));
-        const res1 = await axios.get('http://localhost:19999/api/v2/getData', {
-          params: { Email: Email },
-        });
+        // const res1 = await axios.get('http://localhost:19999/api/v2/getData', {
+        //   params: { Email: Email },
+        // });
+        // if(res1.status==400)
+        // {
+        //   const notify = () => toast(res.data.message);
+        //   notify();
+        // }
+        // const userData = res1.data?.data;
 
-        const userData = res1.data?.data;
-
-        if (userData) {
-          console.error("Existing user!");
-          SetLogin(true);
-          return navigate('/');
-        }
+        // if (userData) {
+        //   console.error("Existing user!");
+        //   SetLogin(true);
+        //   navigate('/');
+        // }
         setTimeout(() => setRedirectToHome(true), 2000);
       } else {
-        const notify = () => toast.error(res.data.message);
+        const notify = () => toast.error("hello"+res.data.message);s
         notify();
       }
     } catch (err) {
