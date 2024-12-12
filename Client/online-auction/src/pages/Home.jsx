@@ -9,6 +9,7 @@ import Footer from '../components/Footer'
 import {ChevronRight} from 'lucide-react'
 import {Link} from 'react-router-dom'
 import Auctionpage from '../components/Auctionpage'
+import Adminlog from '../components/Adminlog'
 
 const Home = () => {
   return (
@@ -48,6 +49,7 @@ const Home = () => {
  <Footer/>
  <Contact/>
  <Auctionpage/>
+ <Adminlog/>
 
     </>
   )
