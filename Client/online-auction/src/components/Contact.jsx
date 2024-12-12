@@ -1,5 +1,15 @@
-
+import axios from "axios"
 const Contact=()=>{
+    const handleSend=async()=>{
+
+       try {
+            const res=await axios.post('http://localhost:19999/api/v4/sendForm',{
+                Email:emailref.current.value,
+            })
+       } catch (error) {
+        
+       }
+    }
   return (
     <>
         <section className="bg-white dark:bg-gray-900">
