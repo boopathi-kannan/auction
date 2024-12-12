@@ -24,10 +24,13 @@ router.post('/products', async (req, res) => {
 });
 
 router.get('/getProduct',async(req,res)=>{
-    try {
+    try
+    {
         const Data=await Product.find();
         res.status(200).send({message:"Intha vaichuko ! products...!",data:Data});
-    } catch (error) {
+    } 
+    catch (error) 
+    {
         res.status(400).send({message:"Error da mapla!"});
     }
 })
