@@ -41,9 +41,7 @@ const Home = () => {
       </p>
     </div>
  <div className='flex overflow-x-auto'>
- {[...Array(10)].map((_, index) => (
-    <FinishedCard key={index} />
-  ))}
+  <FinishedCard/>
  </div>
  <Howits/>
  <Contact/>
