@@ -46,6 +46,7 @@ const Home = () => {
  </div>
  <Howits/>
  <Footer/>
+ <Contact/>
  <Auctionpage/>
 
     </>
