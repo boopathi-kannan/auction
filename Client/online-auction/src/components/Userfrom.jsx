@@ -1,7 +1,8 @@
 import React, { useRef } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { StoreData, GetData } from '../Store/store';
+import { StoreData, GetData,SetLogin } from '../Store/store';
+import {Navbar} from './Navbar'
 export const Userform = () => {
   const navigate = useNavigate();
   const nameRef = useRef(null);
@@ -21,7 +22,8 @@ export const Userform = () => {
     });
     console.log(response.status);
     if (response.status==200) {
-      navigate('/profile'); 
+      SetLogin(true);
+      navigate('/'); 
       return;
     }
       console.log('Form submitted successfully:', response.data);
@@ -32,6 +34,7 @@ export const Userform = () => {
 
   return (
     <>
+    <Navbar/>
       <div className="w-screen h-screen flex justify-center items-center">
         <div className="w-[400px] h-auto border border-black rounded-md p-5 align-middle">
           <form className="max-w-sm mx-auto border-solid border-spacing-2 border-black" onSubmit={handleSubmit}>
