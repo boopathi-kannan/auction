@@ -3,7 +3,7 @@ const mongoose=require('mongoose');
 
 const conn=()=>{
     try {
-        const res=mongoose.connect('mongodb+srv://abishek:1234@cluster0.evq4u.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
+        const res=mongoose.connect('mongodb+srv://abi:2005@cluster0.q0rd5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
         );
         console.log("DB connected successfully!");
     } catch (error) {

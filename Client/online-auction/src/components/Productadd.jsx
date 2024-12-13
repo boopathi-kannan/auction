@@ -29,7 +29,7 @@ const handleSubmit = async (e) => {
       setLoading(true);
     } catch (error) {
       console.error('Error:', error);
-      setLoading(true);
+      setLoading(false);
       alert('An error occurred while adding the product.');
     }
     finally{
