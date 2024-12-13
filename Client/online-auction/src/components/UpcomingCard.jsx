@@ -1,20 +1,35 @@
-import React from 'react'
+import React from 'react';
 
-const UpcomingCard = () => {
+const UpcomingCard = ({ time, originalPrice, name, details, auctionPrice, date }) => {
   return (
-    <>
-        <div className='w-[300px] h-[300px] flex flex-col space-y-5 m-10'>
-             <div className='w-40 h-10 bg-slate-400 flex justify-center items-center font-semibold'>12:55:52⏳</div>
-             <div>
-                <img src="https://res.cloudinary.com/dve8r06ul/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1733250026/maclap_pglwex.webp" alt="" />
-             </div>
-             <div>
-               Apple macBook Air 13" 1.8GHZ 128GB🤩
-             </div>
-             <div className='bg-yellow-300 text-center p-3'>Bid now!</div>
-        </div>
-    </>
-  )
-}
+    <div className="w-[300px] h-[400px] flex flex-col space-y-5 m-10 border border-gray-200 shadow-lg rounded-lg">
 
-export default UpcomingCard
+      <div className="w-40 h-10 bg-slate-400 flex justify-center items-center font-semibold rounded-lg">
+        {time} ⏳
+      </div>
+
+      <div className="w-full h-[150px] flex justify-center items-center">
+        <img
+          src={originalPrice}
+          alt={name}
+          className="object-contain h-full rounded-md"
+        />
+      </div>
+
+      <div className="text-center font-medium text-gray-700">
+        {name} - {details}
+      </div>
+      <div className="text-center text-sm text-gray-500">
+        Auction Date: {date}
+      </div>
+      <div className="text-center text-lg font-bold text-green-600">
+        ₹{auctionPrice}
+      </div>
+      <div className="bg-yellow-300 text-center p-3 cursor-pointer rounded-lg hover:bg-yellow-400 transition duration-300">
+        Bid now!
+      </div>
+    </div>
+  );
+};
+
+export default UpcomingCard;

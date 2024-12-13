@@ -28,6 +28,7 @@ const handleSubmit = async (e) => {
       loading(false);
     } catch (error) {
       console.error('Error:', error);
+      loading(false);
       alert('An error occurred while adding the product.');
     }
     finally{
@@ -51,11 +52,11 @@ const handleSubmit = async (e) => {
             </div>
             <div className="mb-5">
               <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Original Price</label>
-              <input placeholder='originalPrice' type="number" ref={originalPriceRef} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5" required />
+              <input placeholder='originalPrice' type="text" ref={originalPriceRef} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5" required />
             </div>
             <div className="mb-5">
               <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Auction Price</label>
-              <input placeholder='auctionPrice'  type="number" ref={auctionPriceRef} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5" required />
+              <input placeholder='auctionPrice'  type="text" ref={auctionPriceRef} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5" required />
             </div>
             <div className="mb-4">
               <label htmlFor="date" className="block text-gray-700 font-medium mb-2">Date</label>
