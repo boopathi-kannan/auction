@@ -2,10 +2,10 @@ import React from 'react';
 
 const UpcomingCard = ({ time, originalPrice, name, details, auctionPrice, date }) => {
   return (
-    <div className="w-[300px] h-[400px] flex flex-col space-y-5 m-10 border border-gray-200 shadow-lg rounded-lg">
+    <div className="w-[300px] h-full flex flex-col space-y-5 m-10 border border-gray-200 shadow-lg rounded-lg">
 
       <div className="w-40 h-10 bg-slate-400 flex justify-center items-center font-semibold rounded-lg">
-        {time} ⏳
+        Time: {time} PM ⏳
       </div>
 
       <div className="w-full h-[150px] flex justify-center items-center">
