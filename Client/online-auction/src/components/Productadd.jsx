@@ -9,6 +9,7 @@ export const Productadd = () => {
   const auctionPriceRef = useRef();
   const dateRef = useRef();
   const timeRef = useRef();
+  // const [users,Setusers]=useState(null);
    const [loading,setLoading]=useState(false);
 const handleSubmit = async (e) => {
   setLoading(true);
@@ -23,16 +24,16 @@ const handleSubmit = async (e) => {
     };
     try {
       const response = await axios.post('https://auction-1-853o.onrender.com/api/v3/products', productData);
-      console.log(response.data);
       alert('Product added successfully!');
-      loading(false);
+      
+      setLoading(true);
     } catch (error) {
       console.error('Error:', error);
-      loading(false);
+      setLoading(true);
       alert('An error occurred while adding the product.');
     }
     finally{
-      loading(false);
+      setLoading(false);
     }
   };
 
