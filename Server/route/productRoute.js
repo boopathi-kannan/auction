@@ -56,7 +56,7 @@ router.post('/products', async (req, res) => {
   <p style="color: #000; margin-top: 20px;">Don't miss your chance to bid on this amazing product! Visit our platform now to participate in the auction.</p>
 
   <div style="text-align: center; margin: 20px 0;">
-    <a href="https://auction-website.com" style="background-color: #000; color: #FFCC00; padding: 10px 20px; text-decoration: none; font-weight: bold; border-radius: 5px;">View Auction</a>
+    <a href="https://auction-j79w.vercel.app/" style="background-color: #000; color: #FFCC00; padding: 10px 20px; text-decoration: none; font-weight: bold; border-radius: 5px;">View Auction</a>
   </div>
 
   <hr style="border: 0; height: 1px; background: #000;">
