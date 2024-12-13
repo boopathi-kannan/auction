@@ -2,7 +2,7 @@ const express = require('express');
 const Product = require('../model/producModel');
 const { route } = require('./Auth');
 const router = express.Router();
-
+const User=require('../model/User');
 router.post('/products', async (req, res) => {
   try {
     const { name, details, originalPrice, auctionPrice, date, time } = req.body;
@@ -16,7 +16,8 @@ router.post('/products', async (req, res) => {
     });
 
     await newProduct.save();
-    res.status(201).json({ message: 'Product added successfully!' });
+    const usersList=await User.find();
+    res.status(201).json({ message: 'Product added successfully!',data:usersList });
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'An error occurred while adding the product.' });
@@ -28,6 +29,7 @@ router.get('/getProduct',async(req,res)=>{
     {
         const Data=await Product.find();
         res.status(200).send({message:"Intha vaichuko ! products...!",data:Data});
+        
     } 
     catch (error) 
     {

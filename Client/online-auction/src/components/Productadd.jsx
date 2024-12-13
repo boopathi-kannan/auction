@@ -41,7 +41,7 @@ const handleSubmit = async (e) => {
       <div className="w-screen h-screen flex justify-center items-center pt-10">
         <div className="w-[400px] h-auto border border-black rounded-md p-5 align-middle">
           <form className="max-w-sm mx-auto border-solid border-spacing-2 border-black" onSubmit={handleSubmit}>
-            <h1 className="text-center pt-3 font-bold text-black">Add Product</h1>
+            <h1 className="text-center pt-3 font-bold text-black text-2xl">Add Product</h1>
             <div className="mb-5">
               <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Name</label>
               <input placeholder='Name' type="text" ref={productNameRef} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5" required />
@@ -52,7 +52,7 @@ const handleSubmit = async (e) => {
             </div>
             <div className="mb-5">
               <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Original Price</label>
-              <input placeholder='originalPrice' type="text" ref={originalPriceRef} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5" required />
+              <input placeholder='Image url' type="text" ref={originalPriceRef} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5" required />
             </div>
             <div className="mb-5">
               <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Auction Price</label>
