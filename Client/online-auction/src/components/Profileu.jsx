@@ -30,6 +30,7 @@ const Profileu = () => {
         }
         StoreData({ ...storedData, ...userData });
         console.log("Stored new data:", GetData());
+        SetLogin(true);
       } catch (error) {
         console.error("Error fetching data:", error);
         navigate('/userdetails'); 
